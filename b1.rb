@@ -1,7 +1,8 @@
+#test_write filef initialize
 class Exp
-   def initialize
+    def initialize
        @name ='Mai'
-   end
+    end
     def hi_world
       puts "Hi World! I'm #{@name}"
     end
