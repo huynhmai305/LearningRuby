@@ -1,0 +1,20 @@
+- if @books.blank?
+  p
+    | Không tìm thấy sách trong hệ thống
+- else
+  ul#subjects
+    - Subject.all.each do |c|
+      li
+        = link_to c.name, :action => "show_subjects", :id => c.id
+  p
+    | Danh mục sách hiện có trong hệ thống
+  ul#books
+    - @books.each do |c|
+      li
+        = link_to c.title, {:action => 'show', :id => c.id}
+      b
+        = link_to 'Sửa', {:action => "edit", :id => c.id}
+      b
+        = link_to 'Xóa', {:action => 'delete', :id => c.id},  :confirm => "Bạn có chắc muốn xóa không?"
+p
+  = link_to "Thêm sách mới", {:action => 'new'}

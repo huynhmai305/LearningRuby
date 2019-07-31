@@ -1,0 +1,19 @@
+html[lang="en"]
+  head
+    meta[charset="UTF-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    meta[http-equiv="X-UA-Compatible" content="ie=edge"]
+    title
+      | Thư viện
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body#library
+    #container
+      #header
+        h1
+          | Hệ thống thông tin thư viện
+        h3
+          | Thư viện được cung cấp bởi Ruby on Rails
+      #content
+        = yield
+      #sidebar

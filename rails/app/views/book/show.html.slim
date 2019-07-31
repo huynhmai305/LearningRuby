@@ -1,0 +1,20 @@
+h1
+  = @book.title
+p
+  strong
+    | Giá tiền: 
+  | $
+  = @book.price
+  br
+  strong
+    | Thể loại: 
+  = link_to @book.subject.name, :action => 'show_subjects', :id => @book.subject.id
+  br
+  strong
+    | Ngày tạo: 
+  = @book.created_at
+  br
+p
+  = @book.description
+hr
+= link_to 'Trở lại', {:action => 'list'}

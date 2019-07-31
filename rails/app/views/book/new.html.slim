@@ -1,0 +1,22 @@
+h1
+  | Thêm sách mới
+= form_tag :action => 'create' do
+  p
+  label[for="book_title"]
+    | Tiêu đề :
+  = text_field 'books', 'title'
+  p
+  label[for="book_price"]
+    | Giá tiền :
+  = text_field 'books', 'price'
+  p
+  label[for="book_subject_id"]
+    | Thể loại :
+  = collection_select(:books, :subject_id, @subjects, :id, :name, prompt: true)
+  p
+  label[for="book_description"]
+    | Mô tả
+  br
+  = text_area 'books', 'description'
+  = submit_tag "Create"
+= link_to 'Trở lại', {:action => 'list'}
